@@ -5,7 +5,7 @@ import { Hero } from './Components/pages/hero/Hero'
 import { About } from './Components/pages/about/About'
 import { AppLayout } from './Components/layout/AppLayout'
 import { Projects } from './Components/pages/project/Projects'
-import { Contact } from './Components/pages/Contact'
+import { Contact } from './Components/pages/contact/Contact'
 import { Loader } from './Components/pages/loader/Loader'
 import { CustomCursor } from './Components/pages/cursor/CustomCursor'
 
