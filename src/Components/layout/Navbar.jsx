@@ -1,33 +1,49 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { FaRegWindowClose } from "react-icons/fa";
+
 
 export const Navbar = () => {
-  const getNavLinkStyle = ({ isActive }) => {
-    return {
-      color: isActive ? "#00C0FF" : ""
-    }
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const getNavLinkStyle = ({ isActive }) => ({
+    color: isActive ? "#00C0FF" : ""
+  });
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+  const handleMenuCloseOnClick = () => {
+    setIsMenuOpen(false);
   }
 
   return (
     <nav className="navbar">
       <div className="navbar-logo">
         <NavLink to="/">
-          <h1>Areeb</h1>
+          <h1 className="logo-text">Areeb</h1>
         </NavLink>
       </div>
-      <ul className="navbar__link">
+
+      <button className="hamburger" onClick={toggleMenu}>
+        {isMenuOpen ? <FaRegWindowClose /> : <GiHamburgerMenu />}
+      </button>
+
+      <ul className={`navbar__links ${isMenuOpen ? "active" : ""}`}>
         <li>
-          <NavLink style={getNavLinkStyle} to="/">Home</NavLink>
+          <NavLink onClick={handleMenuCloseOnClick} style={getNavLinkStyle} to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink style={getNavLinkStyle} to="/about">About</NavLink>
+          <NavLink onClick={handleMenuCloseOnClick} style={getNavLinkStyle} to="/about">About</NavLink>
         </li>
         <li>
-          <NavLink style={getNavLinkStyle} to="/projects">Projects</NavLink>
+          <NavLink onClick={handleMenuCloseOnClick} style={getNavLinkStyle} to="/projects">Projects</NavLink>
         </li>
         <li>
-          <NavLink style={getNavLinkStyle} to="/contact">Contact</NavLink>
+          <NavLink onClick={handleMenuCloseOnClick} style={getNavLinkStyle} to="/contact">Contact</NavLink>
         </li>
       </ul>
     </nav>
   );
-}
+};

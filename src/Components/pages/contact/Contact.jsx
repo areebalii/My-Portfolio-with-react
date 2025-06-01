@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Contact.css';
+import "../../../App.css";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -121,60 +122,60 @@ export const Contact = () => {
               </div>
             </div>
           </div>
-       
-        <form onSubmit={handleSubmit} className="contact-form">
-          <div className="form-group">
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-            />
-            <label htmlFor="name">Your Name</label>
-          </div>
-          <div className="form-group">
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-            <label htmlFor="email">Your Email</label>
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              value={formData.subject}
-              onChange={handleChange}
-              required
-            />
-            <label htmlFor="subject">Subject</label>
-          </div>
-          <div className="form-group">
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows="5"
-              required
-            ></textarea>
-            <label htmlFor="message">Your Message</label>
-          </div>
-          <button type="submit" className="submit-btn">
-            Send Message
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-        </form>
-         </div>
+
+          <form onSubmit={handleSubmit} className="contact-form">
+            <div className="form-group">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+              />
+              <label htmlFor="name">Your Name</label>
+            </div>
+            <div className="form-group">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+              <label htmlFor="email">Your Email</label>
+            </div>
+            <div className="form-group">
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
+              />
+              <label htmlFor="subject">Subject</label>
+            </div>
+            <div className="form-group">
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows="5"
+                required
+              ></textarea>
+              <label htmlFor="message">Your Message</label>
+            </div>
+            <button type="submit" className="submit-btn">
+              Send Message
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </form>
+        </div>
 
       </div>
     </section >
